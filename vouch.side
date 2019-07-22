@@ -1,0 +1,955 @@
+{
+  "id": "f195be34-56e6-49ef-aa18-55bf63dda044",
+  "version": "2.0",
+  "name": "vouch",
+  "url": "https://staging.vouch.sg/api/v1/merchants/bot/5c0899a0f82bb561b4eff079",
+  "tests": [{
+    "id": "2d98a21b-1ee2-4a11-84f0-ff4a00984234",
+    "name": "Open-subscribe-cancel-back to main menu",
+    "commands": [{
+      "id": "1933e021-484f-4664-aabf-9b9765b88616",
+      "comment": "open chatbox",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": "https://staging.vouch.sg/api/v1/merchants/bot/5c0899a0f82bb561b4eff079"
+    }, {
+      "id": "5faa8cc6-c60a-47e5-b0aa-b3d2857d6592",
+      "comment": "widget check",
+      "command": "waitForElementPresent",
+      "target": "id=vc-widget-title",
+      "targets": [
+        ["id=vc-widget-title", "id"],
+        ["css=#vc-widget-title", "css:finder"],
+        ["xpath=//span[@id='vc-widget-title']", "xpath:attributes"],
+        ["xpath=//div[@id='vc-chat-panel']/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Vouch Widget')]", "xpath:innerText"]
+      ],
+      "value": "5000"
+    }, {
+      "id": "d11ab2cd-3c26-4802-adb8-cb7a6bb29982",
+      "comment": "wait for chatbox",
+      "command": "waitForElementVisible",
+      "target": "id=vc-input",
+      "targets": [
+        ["id=vc-input", "id"],
+        ["css=#vc-input", "css:finder"],
+        ["xpath=//input[@id='vc-input']", "xpath:attributes"],
+        ["xpath=//div[@id='no-speech']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "50000"
+    }, {
+      "id": "a4e5da2e-698d-455e-b033-780dc54b0cd1",
+      "comment": "type in chatbox",
+      "command": "type",
+      "target": "id=vc-input",
+      "targets": [
+        ["id=vc-input", "id"],
+        ["css=#vc-input", "css:finder"],
+        ["xpath=//input[@id='vc-input']", "xpath:attributes"],
+        ["xpath=//div[@id='no-speech']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Hello!"
+    }, {
+      "id": "c15b333c-422a-46b0-8119-b61f1488173d",
+      "comment": "enter chat",
+      "command": "click",
+      "target": "css=.vciw-play3",
+      "targets": [
+        ["css=.vciw-play3", "css:finder"],
+        ["xpath=//span[@id='btn-send']/i", "xpath:idRelative"],
+        ["xpath=//div[2]/span/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6a477cdb-4bc7-431c-b8b6-56287b91eb4c",
+      "comment": "subscribe check",
+      "command": "click",
+      "target": "css=.quick-reply",
+      "targets": [
+        ["css=.quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563586218591']/div[2]/span/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f9814e4b-db03-4a4d-880f-d72540b9c214",
+      "comment": "cancel subscribe",
+      "command": "click",
+      "target": "css=.quick-reply",
+      "targets": [
+        ["css=.quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563586307576']/div[2]/span/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0250ed31-5260-4a1c-9337-f655014dacd2",
+      "comment": "wait respond",
+      "command": "//waitForElementPresent",
+      "target": "id=vc-bubble-no-5d32709196f82c31953da191",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "ea743acd-95b2-4d6c-9088-adb08e37afe0",
+      "comment": "type main menu",
+      "command": "type",
+      "target": "id=vc-input",
+      "targets": [
+        ["id=vc-input", "id"],
+        ["css=#vc-input", "css:finder"],
+        ["xpath=//input[@id='vc-input']", "xpath:attributes"],
+        ["xpath=//div[@id='no-speech']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Main Menu"
+    }, {
+      "id": "b96f33e1-5406-4abd-aaed-30a828b2ffec",
+      "comment": "input \"main menu\" in chat box",
+      "command": "click",
+      "target": "css=.vciw-play3",
+      "targets": [
+        ["css=.vciw-play3", "css:finder"],
+        ["xpath=//span[@id='btn-send']/i", "xpath:idRelative"],
+        ["xpath=//div[2]/span/i", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "b6c29d37-9db7-4873-b894-5dbdbd725c23",
+      "comment": "closing chatbox",
+      "command": "click",
+      "target": "id=vc-chat-button-close",
+      "targets": [
+        ["id=vc-chat-button-close", "id"],
+        ["css=#vc-chat-button-close", "css:finder"],
+        ["xpath=//div[@id='vc-chat-button-close']", "xpath:attributes"],
+        ["xpath=//div[@id='vc-chat-button']/div[2]", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6c47c354-fe4e-459f-b1e1-3a56dd52e985",
+      "comment": "re-opening chatbox",
+      "command": "click",
+      "target": "id=vc-chat-button-open",
+      "targets": [
+        ["id=vc-chat-button-open", "id"],
+        ["css=#vc-chat-button-open", "css:finder"],
+        ["xpath=//div[@id='vc-chat-button-open']", "xpath:attributes"],
+        ["xpath=//div[@id='vc-chat-button']/div", "xpath:idRelative"],
+        ["xpath=//div[8]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d0745189-80d3-4587-94cb-fd0ebf963c87",
+      "comment": "end",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "3b3cfb0e-99f2-4c56-a8b1-ace68e9cca87",
+    "name": "interacting with chats and clicks on random menus",
+    "commands": [{
+      "id": "e3f489fb-05e6-4e3c-bbe1-92b147cf041e",
+      "comment": "open chatbox",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": "https://staging.vouch.sg/api/v1/merchants/bot/5c0899a0f82bb561b4eff079"
+    }, {
+      "id": "70bdbc20-4c6e-4628-beeb-5c27c34ae204",
+      "comment": "widget check",
+      "command": "waitForElementPresent",
+      "target": "id=vc-widget-title",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "836c5b1d-70cf-4e80-b016-3eb6ce0d9bb8",
+      "comment": "wait for chatbox",
+      "command": "waitForElementVisible",
+      "target": "id=vc-input",
+      "targets": [],
+      "value": "50000"
+    }, {
+      "id": "0fe901c9-4125-4f18-a686-6aded96a2f20",
+      "comment": "typing in chatbox",
+      "command": "type",
+      "target": "id=vc-input",
+      "targets": [
+        ["id=vc-input", "id"],
+        ["css=#vc-input", "css:finder"],
+        ["xpath=//input[@id='vc-input']", "xpath:attributes"],
+        ["xpath=//div[@id='no-speech']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Good morning!"
+    }, {
+      "id": "7c033a35-d3c5-48f6-ab24-9e52091ac533",
+      "comment": "enter chat",
+      "command": "click",
+      "target": "css=.vciw-play3",
+      "targets": [
+        ["css=.vciw-play3", "css:finder"],
+        ["xpath=//span[@id='btn-send']/i", "xpath:idRelative"],
+        ["xpath=//div[2]/span/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "58a7f971-3ede-40fe-8636-d9f0fe7e449a",
+      "comment": "wait for response",
+      "command": "waitForElementPresent",
+      "target": "css=.quick-reply",
+      "targets": [
+        ["css=.quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563618874499']/div[2]/span/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "33d2c9c6-8608-4aeb-ad73-5b005f1dc6d4",
+      "comment": "type reservations in chatbox",
+      "command": "type",
+      "target": "id=vc-input",
+      "targets": [
+        ["id=vc-input", "id"],
+        ["css=#vc-input", "css:finder"],
+        ["xpath=//input[@id='vc-input']", "xpath:attributes"],
+        ["xpath=//div[@id='no-speech']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Reservations"
+    }, {
+      "id": "2ff8e0b5-c3dc-499a-9290-594ce337a4d2",
+      "comment": "enter chat",
+      "command": "click",
+      "target": "css=.vciw-play3",
+      "targets": [
+        ["css=.vciw-play3", "css:finder"],
+        ["xpath=//span[@id='btn-send']/i", "xpath:idRelative"],
+        ["xpath=//div[2]/span/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "da0b6220-dfe1-4192-b337-234d1a94305f",
+      "comment": "wait for respond",
+      "command": "assertText",
+      "target": "css=.vcw-gallery-item-simple:nth-child(1) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(1) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563596410321']/div[2]/span/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span/div", "xpath:position"]
+      ],
+      "value": "Room Reservations"
+    }, {
+      "id": "9878220a-c9b1-42d5-a70f-72712adfcd97",
+      "comment": "choosing room reservations",
+      "command": "type",
+      "target": "id=vc-input",
+      "targets": [
+        ["id=vc-input", "id"],
+        ["css=#vc-input", "css:finder"],
+        ["xpath=//input[@id='vc-input']", "xpath:attributes"],
+        ["xpath=//div[@id='no-speech']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Room Reservations"
+    }, {
+      "id": "35bebdc4-92f7-4219-b6dc-80546aa9bfdf",
+      "comment": "enter chat",
+      "command": "click",
+      "target": "css=.vciw-play3",
+      "targets": [
+        ["css=.vciw-play3", "css:finder"],
+        ["xpath=//span[@id='btn-send']/i", "xpath:idRelative"],
+        ["xpath=//div[2]/span/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9e6e229c-8927-4681-8226-c79e85a364ce",
+      "comment": "wait for respond",
+      "command": "waitForElementPresent",
+      "target": "css=.vcw-gallery-item-simple:nth-child(3) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(3) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563595268719']/div[2]/span[3]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span[3]/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "c6138d15-4cff-41be-89fd-2f85238748f4",
+      "comment": "choosing see rooms in 3D",
+      "command": "click",
+      "target": "css=.vcw-gallery-item-simple:nth-child(3) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(3) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563595268719']/div[2]/span[3]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span[3]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "278a167f-0751-48b9-8431-841824322fd7",
+      "comment": "wait for respond",
+      "command": "assertText",
+      "target": "css=.quick-reply",
+      "targets": [
+        ["css=.quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563596523659']/div[2]/span/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span/div", "xpath:position"]
+      ],
+      "value": "Main Menu"
+    }, {
+      "id": "739c61f4-a93a-459f-b4a4-1348ec216d3a",
+      "comment": "back to main menu",
+      "command": "click",
+      "target": "css=.quick-reply",
+      "targets": [
+        ["css=.quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563596211380']/div[2]/span/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e8c264a3-8d60-42ea-b5b2-aa46b979aed9",
+      "comment": "wait for respond",
+      "command": "//waitForElementPresent",
+      "target": "xpath=(//div[@id='vcw-card-button'])[22]",
+      "targets": [],
+      "value": "10000"
+    }, {
+      "id": "781a9079-8056-4cfe-8545-0adf00b1cc87",
+      "comment": "special event",
+      "command": "click",
+      "target": "xpath=(//div[@id='vcw-card-button'])[33]",
+      "targets": [
+        ["xpath=(//div[@id='vcw-card-button'])[33]", "xpath:attributes"],
+        ["xpath=//div[@id='vc-message-no-5d32e2b496f82c31953e6d5a']/div/span[3]/div[3]/div[3]", "xpath:idRelative"],
+        ["xpath=//div[31]/div/span[3]/div[3]/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "391c2027-452f-48a5-8bd6-03aba8fd0918",
+      "comment": "wait for respond",
+      "command": "waitForElementPresent",
+      "target": "css=.quick-reply",
+      "targets": [
+        ["css=.quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563605070316']/div[2]/span/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "ae8ab5a6-ea5e-48ce-af56-71644237166a",
+      "comment": "back to main menu",
+      "command": "click",
+      "target": "css=.quick-reply",
+      "targets": [
+        ["css=.quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563605070316']/div[2]/span/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6c57af1e-5a9d-4dd3-a21d-d4a9a27c819c",
+      "comment": "wait for response",
+      "command": "//waitForElementPresent",
+      "target": "xpath=(//div[@id='vcw-card-button'])[65]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "da706822-94e2-43c8-924e-89855ece8210",
+      "comment": "see more",
+      "command": "click",
+      "target": "xpath=(//div[@id='vcw-card-button'])[39]",
+      "targets": [
+        ["xpath=(//div[@id='vcw-card-button'])[39]", "xpath:attributes"],
+        ["xpath=//div[@id='vc-message-no-5d330c9796f82c31953ebacf']/div/span[5]/div[3]/div[3]", "xpath:idRelative"],
+        ["xpath=//div[29]/div/span[5]/div[3]/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8a62b09c-f664-4743-bd93-d23341fa8af1",
+      "comment": "wait for respond",
+      "command": "//waitForElementPresent",
+      "target": "css=#vc-message-no-5d32ea3896f82c31953e8b18 .vcw-card:nth-child(4) #vcw-card-button",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "1d638871-2daa-4ef3-9818-830e1b6a6e90",
+      "comment": "click wifi see more",
+      "command": "clickAt",
+      "target": "css=#vc-message-no-5d330cb496f82c31953ebb00 .vcw-card:nth-child(4) #vcw-card-button",
+      "targets": [
+        ["css=#vc-message-no-5d330cb496f82c31953ebb00 .vcw-card:nth-child(4) #vcw-card-button", "css:finder"],
+        ["xpath=(//div[@id='vcw-card-button'])[43]", "xpath:attributes"],
+        ["xpath=//div[@id='vc-message-no-5d330cb496f82c31953ebb00']/div/span[4]/div[3]/div", "xpath:idRelative"],
+        ["xpath=//div[33]/div/span[4]/div[3]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f35a71d7-dce1-4bdd-9fc7-2dcb519cbc8d",
+      "comment": "back to previous",
+      "command": "waitForElementPresent",
+      "target": "css=.vcw-gallery-item-simple:nth-child(1) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(1) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563605232195']/div[2]/span/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "c23181d8-62c8-4f1a-a18c-1c06f172ed98",
+      "comment": "wait for respond",
+      "command": "waitForElementPresent",
+      "target": "css=.quick-reply",
+      "targets": [
+        ["css=.quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563605262752']/div[2]/span/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "5daeffdc-8844-42d6-92f9-3b276f5c36d5",
+      "comment": "back to main menu",
+      "command": "click",
+      "target": "css=.quick-reply",
+      "targets": [
+        ["css=.quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563605262752']/div[2]/span/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4a148f3a-0dfc-4eee-ba0d-9d1f61554ac9",
+      "comment": "wait for respond",
+      "command": "waitForElementEditable",
+      "target": "id=vc-input",
+      "targets": [
+        ["id=vc-input", "id"],
+        ["css=#vc-input", "css:finder"],
+        ["xpath=//input[@id='vc-input']", "xpath:attributes"],
+        ["xpath=//div[@id='no-speech']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "6b097210-d1be-46be-a3cf-2e577c191f48",
+      "comment": "typing reservations in chatbox",
+      "command": "type",
+      "target": "id=vc-input",
+      "targets": [
+        ["id=vc-input", "id"],
+        ["css=#vc-input", "css:finder"],
+        ["xpath=//input[@id='vc-input']", "xpath:attributes"],
+        ["xpath=//div[@id='no-speech']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Reservations"
+    }, {
+      "id": "67efacac-c11b-4c02-93da-f8ac90c80222",
+      "comment": "enter reservations",
+      "command": "click",
+      "target": "css=.vciw-play3",
+      "targets": [
+        ["css=.vciw-play3", "css:finder"],
+        ["xpath=//span[@id='btn-send']/i", "xpath:idRelative"],
+        ["xpath=//div[2]/span/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e96726d2-131a-4c11-8fde-3c74820ca3d9",
+      "comment": "wait for respond",
+      "command": "waitForElementPresent",
+      "target": "css=.vcw-gallery-item-simple:nth-child(2) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(2) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563605382629']/div[2]/span[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span[2]/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "5a653c52-63f1-43eb-aad3-d7b9b7bd3b1b",
+      "comment": "clicking food reservations",
+      "command": "click",
+      "target": "css=.vcw-gallery-item-simple:nth-child(2) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(2) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563605382629']/div[2]/span[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "78b0e4ce-672e-4ee9-ad4c-82abb776d8fe",
+      "comment": "wait for respond",
+      "command": "waitForElementPresent",
+      "target": "css=.vcw-card:nth-child(8) #vcw-card-button",
+      "targets": [
+        ["css=.vcw-card:nth-child(8) #vcw-card-button", "css:finder"],
+        ["xpath=(//div[@id='vcw-card-button'])[138]", "xpath:attributes"],
+        ["xpath=//div[@id='vc-message-no-5d32b9b396f82c31953df4d7']/div/span[8]/div[3]/div", "xpath:idRelative"],
+        ["xpath=//div[119]/div/span[8]/div[3]/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "05fb8fde-9313-458a-8068-d0a3e77b1256",
+      "comment": "find out more on Mr Stork",
+      "command": "click",
+      "target": "css=.vcw-card:nth-child(8) #vcw-card-button",
+      "targets": [
+        ["css=.vcw-card:nth-child(8) #vcw-card-button", "css:finder"],
+        ["xpath=(//div[@id='vcw-card-button'])[138]", "xpath:attributes"],
+        ["xpath=//div[@id='vc-message-no-5d32b9b396f82c31953df4d7']/div/span[8]/div[3]/div", "xpath:idRelative"],
+        ["xpath=//div[119]/div/span[8]/div[3]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7c4dc392-7eaf-4f87-98c9-c99d455315c9",
+      "comment": "wait for respond",
+      "command": "waitForElementPresent",
+      "target": "css=.vcw-gallery-item-simple:nth-child(2) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(2) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563605483971']/div[2]/span[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span[2]/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "cb61354a-f69d-4d78-9b22-a207d184c1a2",
+      "comment": "choosing food menu",
+      "command": "click",
+      "target": "css=.vcw-gallery-item-simple:nth-child(2) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(2) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563605483971']/div[2]/span[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "942aa3ed-23e4-469c-aa9e-f924cdad8aa4",
+      "comment": "wait for respond",
+      "command": "waitForElementPresent",
+      "target": "css=.vcw-gallery-item-simple:nth-child(3) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(3) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563607243100']/div[2]/span[3]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span[3]/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "912b366b-307b-4969-a787-0ca5cbd00502",
+      "comment": "click drinks menu",
+      "command": "click",
+      "target": "css=.vcw-gallery-item-simple:nth-child(3) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(3) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563607243100']/div[2]/span[3]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span[3]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8dcd6f80-92d4-4bd1-812e-45c613e714a4",
+      "comment": "wait for respond",
+      "command": "waitForElementPresent",
+      "target": "css=.vcw-gallery-item-simple:nth-child(5) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(5) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563608102565']/div[2]/span[5]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span[5]/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "e2f568d2-9093-4ed3-9a00-8fa716337248",
+      "comment": "click more info",
+      "command": "click",
+      "target": "css=.vcw-gallery-item-simple:nth-child(5) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(5) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563607356064']/div[2]/span[5]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span[5]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "755e8c4d-e1d3-4c7e-8675-eaee30efa015",
+      "comment": "wait for respond",
+      "command": "waitForElementPresent",
+      "target": "css=.vcw-gallery-item-simple:nth-child(6) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(6) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563607403573']/div[2]/span[6]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span[6]/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "01d7c8d8-cdb3-4a18-be18-2efba56b0da9",
+      "comment": "click other restaurant",
+      "command": "click",
+      "target": "css=.vcw-gallery-item-simple:nth-child(6) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(6) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563607403573']/div[2]/span[6]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span[6]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1ec84696-f1fd-47b2-983b-fb90a105b8f5",
+      "comment": "wait for respond",
+      "command": "waitForElementPresent",
+      "target": "css=.vcw-gallery-item-simple:nth-child(2) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(2) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563607495362']/div[2]/span[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span[2]/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "6b32258a-59cb-4bd0-8e7f-a2c0f65c66c3",
+      "comment": "back to main menu",
+      "command": "click",
+      "target": "css=.vcw-gallery-item-simple:nth-child(2) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(2) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563607495362']/div[2]/span[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b0854635-fa76-46c0-bd87-f89bc63c0f2e",
+      "comment": "wait for helpful confirmation",
+      "command": "waitForElementPresent",
+      "target": "css=.vcw-gallery-item-simple:nth-child(2) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(2) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563607649318']/div[2]/span[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span[2]/div", "xpath:position"]
+      ],
+      "value": "200000"
+    }, {
+      "id": "da26623f-225a-4664-add5-880efd7f2309",
+      "comment": "click no",
+      "command": "click",
+      "target": "css=.vcw-gallery-item-simple:nth-child(2) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(2) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563607649318']/div[2]/span[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e48a695c-6282-42ae-b0f9-46f9e0d9d840",
+      "comment": "wait for respond",
+      "command": "waitForElementPresent",
+      "target": "css=.vcw-gallery-item-simple:nth-child(4) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(4) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563607694538']/div[2]/span[4]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span[4]/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "16c61485-8683-46ca-adbf-f126c3a27941",
+      "comment": "click cancel",
+      "command": "click",
+      "target": "css=.vcw-gallery-item-simple:nth-child(4) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(4) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563607694538']/div[2]/span[4]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span[4]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9adf7e63-221a-473d-8189-2a4457023cfa",
+      "comment": "end",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "d0f840f4-f9cb-4233-b081-03ae6497b8d4",
+    "name": "interacting with clicks",
+    "commands": [{
+      "id": "fe6c06c0-c9a9-4f75-9764-1513706756b7",
+      "comment": "open chatbox",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": "https://staging.vouch.sg/api/v1/merchants/bot/5c0899a0f82bb561b4eff079"
+    }, {
+      "id": "3249c175-0cdf-4bff-a56f-151a0c4c6711",
+      "comment": "widget check",
+      "command": "waitForElementPresent",
+      "target": "id=vc-widget-title",
+      "targets": [
+        ["id=vc-widget-title", "id"],
+        ["css=#vc-widget-title", "css:finder"],
+        ["xpath=//span[@id='vc-widget-title']", "xpath:attributes"],
+        ["xpath=//div[@id='vc-chat-panel']/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Vouch Widget')]", "xpath:innerText"]
+      ],
+      "value": "5000"
+    }, {
+      "id": "6d89b6ad-a248-44e7-a801-fc2dbf6b4464",
+      "comment": "wait for chatbox",
+      "command": "waitForElementVisible",
+      "target": "id=vc-input",
+      "targets": [
+        ["id=vc-input", "id"],
+        ["css=#vc-input", "css:finder"],
+        ["xpath=//input[@id='vc-input']", "xpath:attributes"],
+        ["xpath=//div[@id='no-speech']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "50000"
+    }, {
+      "id": "66a5b636-f3ee-46cf-918b-e09ec17413f5",
+      "comment": "type in chatbox",
+      "command": "type",
+      "target": "id=vc-input",
+      "targets": [
+        ["id=vc-input", "id"],
+        ["css=#vc-input", "css:finder"],
+        ["xpath=//input[@id='vc-input']", "xpath:attributes"],
+        ["xpath=//div[@id='no-speech']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Hi!"
+    }, {
+      "id": "74f0b753-21d5-4dab-91fa-3d17d66b7068",
+      "comment": "enter chat",
+      "command": "click",
+      "target": "css=.vciw-play3",
+      "targets": [
+        ["css=.vciw-play3", "css:finder"],
+        ["xpath=//span[@id='btn-send']/i", "xpath:idRelative"],
+        ["xpath=//div[2]/span/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e1bcdba9-f0af-4a98-a285-c0914343ea9e",
+      "comment": "wait for response",
+      "command": "//waitForElementPresent",
+      "target": "xpath=(//div[@id='vcw-card-button'])[29]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "0ddf4c81-fdaf-4c12-b799-d807374b9ceb",
+      "comment": "click rooms reservations",
+      "command": "click",
+      "target": "xpath=(//div[@id='vcw-card-button'])[42]",
+      "targets": [
+        ["xpath=(//div[@id='vcw-card-button'])[42]", "xpath:attributes"],
+        ["xpath=//div[@id='vc-message-no-5d32f3ba96f82c31953ea367']/div/span[2]/div[3]/div", "xpath:idRelative"],
+        ["xpath=//div[23]/div/span[2]/div[3]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fb9aad82-c0e9-4856-877f-2633cc92651b",
+      "comment": "wait for response",
+      "command": "waitForElementPresent",
+      "target": "css=.vcw-gallery-item-simple:nth-child(1) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(1) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563618032609']/div[2]/span/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "ff3b19b1-abb2-43f3-b0c8-c2a046f6b7e6",
+      "comment": "click book a room",
+      "command": "click",
+      "target": "css=.vcw-gallery-item-simple:nth-child(1) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(1) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563618032609']/div[2]/span/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "6ae5bdd7-0638-4b9c-a4ba-cfad28015dc6",
+      "comment": "wait for response",
+      "command": "waitForElementPresent",
+      "target": "css=.vcw-gallery-item-simple:nth-child(2) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(2) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563618091971']/div[2]/span[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span[2]/div", "xpath:position"]
+      ],
+      "value": "Main Menu"
+    }, {
+      "id": "4535592b-54a0-4603-b1cd-70b1bc09c5ea",
+      "comment": "click room request",
+      "command": "click",
+      "target": "css=.vcw-gallery-item-simple:nth-child(2) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(2) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563618091971']/div[2]/span[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span[2]/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "154b9d99-08da-4af2-a918-3226844a17d9",
+      "comment": "wait for response",
+      "command": "waitForElementPresent",
+      "target": "css=.vcw-gallery-item-simple:nth-child(4) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(4) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563618136971']/div[2]/span[4]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span[4]/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "3907608f-966e-46d1-ac3c-d41410b591be",
+      "comment": "click modify/cancel",
+      "command": "click",
+      "target": "css=.vcw-gallery-item-simple:nth-child(4) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(4) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563618136971']/div[2]/span[4]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span[4]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "836194b5-1241-499f-8968-d71c5752fb2e",
+      "comment": "wait for response",
+      "command": "waitForElementPresent",
+      "target": "css=.vcw-gallery-item-simple:nth-child(5) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(5) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563618182571']/div[2]/span[5]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span[5]/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "cc7b7ef6-1b59-430b-a402-a724feb38494",
+      "comment": "back to main menu",
+      "command": "click",
+      "target": "css=.vcw-gallery-item-simple:nth-child(5) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(5) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563618182571']/div[2]/span[5]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span[5]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "56a934e4-15e6-434a-a11b-823b8632fcef",
+      "comment": "wait for response",
+      "command": "//waitForElementPresent",
+      "target": "xpath=(//div[@id='vcw-card-button'])[56]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "7c9a6f31-faca-43a3-a837-938c78e09d5e",
+      "comment": "click room types",
+      "command": "click",
+      "target": "xpath=(//div[@id='vcw-card-button'])[56]",
+      "targets": [
+        ["xpath=(//div[@id='vcw-card-button'])[56]", "xpath:attributes"],
+        ["xpath=//div[@id='vc-message-no-5d32f42e96f82c31953ea593']/div/span[2]/div[3]/div[2]", "xpath:idRelative"],
+        ["xpath=//div[41]/div/span[2]/div[3]/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2b4037c5-6f46-4031-954a-d7b298c7d132",
+      "comment": "wait for response",
+      "command": "waitForElementPresent",
+      "target": "css=.quick-reply",
+      "targets": [
+        ["css=.quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563618276497']/div[2]/span/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "a4a98357-56c3-4a5d-a575-40db28203f4d",
+      "comment": "click Main Menu",
+      "command": "click",
+      "target": "css=.quick-reply",
+      "targets": [
+        ["css=.quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563618276497']/div[2]/span/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2bf5d59b-94d1-42fe-9882-652c8c5c01d4",
+      "comment": "wait for response",
+      "command": "//waitForElementPresent",
+      "target": "xpath=(//div[@id='vcw-card-button'])[107]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "251f4cb6-3c67-4b72-bc9b-344491c32a45",
+      "comment": "click weddings",
+      "command": "click",
+      "target": "xpath=(//div[@id='vcw-card-button'])[44]",
+      "targets": [
+        ["xpath=(//div[@id='vcw-card-button'])[44]", "xpath:attributes"],
+        ["xpath=//div[@id='vc-message-no-5d3313e196f82c31953ecb31']/div/span[3]/div[3]/div", "xpath:idRelative"],
+        ["xpath=//div[48]/div/span[3]/div[3]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f554c4e7-0901-452d-9ef9-42d3a95ae5c3",
+      "comment": "wait for response",
+      "command": "//waitForElementPresent",
+      "target": "xpath=(//div[@id='vcw-card-button'])[108]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "afcbfadd-4d36-4531-9cd2-9c7eac6abdd2",
+      "comment": "click meetings & events",
+      "command": "click",
+      "target": "xpath=(//div[@id='vcw-card-button'])[45]",
+      "targets": [
+        ["xpath=(//div[@id='vcw-card-button'])[45]", "xpath:attributes"],
+        ["xpath=//div[@id='vc-message-no-5d3313e196f82c31953ecb31']/div/span[3]/div[3]/div[2]", "xpath:idRelative"],
+        ["xpath=//div[48]/div/span[3]/div[3]/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "746a03d1-13be-43be-9fe8-3beb767c2ca5",
+      "comment": "wait for helpful confirmation",
+      "command": "waitForElementPresent",
+      "target": "css=.vcw-gallery-item-simple:nth-child(1) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(1) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563618438755']/div[2]/span/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span/div", "xpath:position"]
+      ],
+      "value": "200000"
+    }, {
+      "id": "c7044f79-7e0f-419e-ba8d-d5c5eee3897c",
+      "comment": "click yes",
+      "command": "click",
+      "target": "css=.vcw-gallery-item-simple:nth-child(1) > .quick-reply",
+      "targets": [
+        ["css=.vcw-gallery-item-simple:nth-child(1) > .quick-reply", "css:finder"],
+        ["xpath=//div[@id='vc-message-no-1563618438755']/div[2]/span/div", "xpath:idRelative"],
+        ["xpath=//div[2]/span/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b9cf9407-7f0a-4d14-b8d2-f06f232e3bff",
+      "comment": "end",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "fd1b2b59-c972-4cc1-aa81-490d5aa66acf",
+    "name": "Vouch test case",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["2d98a21b-1ee2-4a11-84f0-ff4a00984234"]
+  }],
+  "urls": ["https://staging.vouch.sg/api/v1/merchants/bot/5c0899a0f82bb561b4eff079"],
+  "plugins": []
+}
